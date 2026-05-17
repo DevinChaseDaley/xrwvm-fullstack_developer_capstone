@@ -6,7 +6,7 @@
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
     <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <h2 style="padding-right: 5%;">Contact Us</h2>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,55 +16,149 @@
             <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-            <h1>About Us</h1>
-            Welcome to Best Cars dealership, home to the best cars in North America. We deal in selling domestic and imported cars at reasonable prices.
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.jpg" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+    <!-- Contact section -->
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+          <div class="col-12 col-lg-8 text-center">
+            <h1 class="mb-3">Contact Us</h1>
+            <p class="text-muted">
+              Have questions about our services or need a quote? Fill out the form
+              below and we’ll get back to you as soon as possible.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.jpg" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
-        </div>
-      </div>
+        <div class="row g-4">
+          <!-- Contact form -->
+          <div class="col-12 col-lg-7">
+            <div class="card shadow-sm">
+              <div class="card-body p-4">
+                <h2 class="h4 mb-4">Send us a message</h2>
+                <form action="#" method="post">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      placeholder="Your full name"
+                      required
+                    >
+                  </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.jpg" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="you@example.com"
+                      required
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone (optional)</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      name="phone"
+                      placeholder="(555) 123-4567"
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="subject"
+                      name="subject"
+                      placeholder="How can we help?"
+                      required
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      rows="5"
+                      placeholder="Tell us a bit about what you need..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">
+                    Send message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact details -->
+          <div class="col-12 col-lg-5">
+            <div class="card h-100 border-0 bg-light">
+              <div class="card-body p-4">
+                <h2 class="h5 mb-3">Get in touch</h2>
+                <p class="mb-4 text-muted">
+                  Prefer to reach out directly? Use the details below.
+                </p>
+
+                <div class="mb-3">
+                  <h3 class="h6 mb-1">Phone</h3>
+                  <p class="mb-0">
+                    <a href="tel:+18175551234" class="text-decoration-none">
+                      (817) 555-1234
+                    </a>
+                  </p>
+                </div>
+
+                <div class="mb-3">
+                  <h3 class="h6 mb-1">Email</h3>
+                  <p class="mb-0">
+                    <a href="mailto:info@yourbusiness.com" class="text-decoration-none">
+                      info@yourbusiness.com
+                    </a>
+                  </p>
+                </div>
+
+                <div class="mb-3">
+                  <h3 class="h6 mb-1">Address</h3>
+                  <p class="mb-0">
+                    123 Main Street<br>
+                    Your City, TX 76036
+                  </p>
+                </div>
+
+                <div>
+                  <h3 class="h6 mb-1">Hours</h3>
+                  <p class="mb-0">
+                    Mon–Fri: 8:00 AM – 5:00 PM<br>
+                    Sat–Sun: By appointment
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    </div>
-    </div>
-    
+      </div> <!-- /.container -->
 </div>
 
 </html>
