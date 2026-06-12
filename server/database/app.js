@@ -47,9 +47,9 @@ app.get('/fetchReviews', async (req, res) => {
 });
 
 // Express route to fetch reviews by a particular dealer
-app.get('/fetchReviews/dealer/:id', async (req, res) => {
+app.get('/fetchReviews/dealer/:dealership', async (req, res) => {
   try {
-    const documents = await Reviews.find({dealership: req.params.id});
+    const documents = await Reviews.find({dealership: req.params.dealership});
     res.json(documents);
   } catch (error) {
     res.status(500).json({ error: 'Error fetching documents' });
@@ -77,9 +77,9 @@ app.get('/fetchDealers/:state', async (req, res) => {
 });
 
 // Express route to fetch dealer by a particular id
-app.get('/fetchDealer/:id', async (req, res) => {
+app.get('/fetchDealer/:dealership', async (req, res) => {
     try {
-        const documents = await Dealerships.find({id: req.params.id});
+        const documents = await Dealerships.find({dealership: req.params.dealership});
         res.json(documents);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching documents' });
@@ -106,6 +106,7 @@ app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
 
   try {
     const savedReview = await review.save();
+    console.log(savedReview)
     res.json(savedReview);
   } catch (error) {
 		console.log(error);
