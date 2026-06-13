@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import logout
 from django.core.exceptions import ObjectDoesNotExist
@@ -37,8 +36,8 @@ def login_user(request):
 
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
-    logout(request) # Terminate user session
-    data = {"userName": ""} # Return empty username
+    logout(request)  # Terminate user session
+    data = {"userName": ""}  # Return empty username
     return JsonResponse(data)
 
 
@@ -63,12 +62,14 @@ def registration(request):
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
-        user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,password=password, email=email)
+        user = User.objects.create_user(
+            username=username, first_name=first_name,
+            last_name=last_name,password=password, email=email)
         # Login the user and redirect to list page
         login(request, user)
         data = {"userName": username,"status": "Authenticated"}
         return JsonResponse(data)
-    else :
+    else:
         data = {"userName": username,"error": "Already Registered"}
         return JsonResponse(data)
 
@@ -78,7 +79,7 @@ def get_dealerships(request, state="All"):
     if(state == "All"):
         endpoint = "/fetchDealers"
     else:
-        endpoint = "/fetchDealers/"+state
+        endpoint = "/fetchDealers/"+ state
     dealerships = get_request(endpoint)
     return JsonResponse({"status": 200,"dealers": dealerships})
 
@@ -87,15 +88,15 @@ def get_dealerships(request, state="All"):
 def get_dealer_reviews(request, dealer_id):
     # if dealer id has been provided
     if(dealer_id):
-        endpoint = "/fetchReviews/dealer/"+str(dealer_id)
+        endpoint = "/fetchReviews/dealer/" + str(dealer_id)
         reviews = get_request(endpoint)
         for review_detail in reviews:
             response = analyze_review_sentiments(review_detail["review"])
             review_detail["sentiment"] = response["sentiment"]
             print(review_detail)
-        return JsonResponse({"status": 200,"reviews": reviews})
+        return JsonResponse({"status": 200, "reviews": reviews})
     else:
-        return JsonResponse({"status": 400,"message": "Bad Request"})
+        return JsonResponse({"status": 400, "message": "Bad Request"})
 
 
 # Create a `get_dealer_details` view to render the dealer details
@@ -119,7 +120,7 @@ def add_review(request):
             logger.exception("Error in posting review: %s", exc)
             return JsonResponse({"status": 401, "message": "Error in posting review"})
     else:
-        return JsonResponse({"status": 403,"message": "Unauthorized"})
+        return JsonResponse({"status": 403, "message": "Unauthorized"})
 
 
 def get_cars(request):

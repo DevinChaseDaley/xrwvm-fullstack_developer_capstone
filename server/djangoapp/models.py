@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -25,7 +24,7 @@ class CarModel(models.Model):
         validators=[
             MaxValueValidator(2023),
             MinValueValidator(2015)
-        ])
+            ])
     # Other fields as needed
 
     def __str__(self):
